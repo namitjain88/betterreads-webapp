@@ -15,8 +15,9 @@ public class SecurityAdapter extends WebSecurityConfigurerAdapter {
         // @formatter:off
         http
                 .authorizeRequests(a -> a
-                        .antMatchers("/", "/error").permitAll()
-                        .anyRequest().authenticated()
+                        /*.antMatchers("/", "/error").permitAll()
+                        .anyRequest().authenticated()*/
+                        .anyRequest().permitAll() //permit all urls but shows additional info if authenticated
                 )
                 .exceptionHandling(e -> e
                         .authenticationEntryPoint(new HttpStatusEntryPoint(HttpStatus.UNAUTHORIZED))
