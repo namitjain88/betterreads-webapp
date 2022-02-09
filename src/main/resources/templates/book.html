@@ -21,6 +21,9 @@
             <a class="navbar-brand" href="/">Better Reads</a>
         </div>
     </nav>
+
+    <div th:insert="components/book-search :: search-panel"></div>
+
     <section class="content">
         <div class="card">
             <div class="row g-0">
@@ -54,10 +57,10 @@
                                 <label for="readingStatus" class="form-label">Reading status</label>
                                 <select name="readingStatus" id="readingStatus" class="form-select"
                                         aria-label="Reading status" th:field="${userBooks.readingStatus}">
-                                    <option selected value="0">Select</option>
-                                    <option value="reading">Currently Reading</option>
-                                    <option value="finished">Finished</option>
-                                    <option value="didnotfinish">Did not finish</option>
+                                    <option selected value="3">Select</option>
+                                    <option value="0-reading">Currently Reading</option>
+                                    <option value="1-finished">Finished</option>
+                                    <option value="2-didnotfinish">Did not finish</option>
                                 </select>
                             </div>
                             <div class="mb-3">
