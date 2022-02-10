@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -7,14 +7,28 @@
     <meta name="description" content=""/>
     <meta name="viewport" content="width=device-width"/>
     <base href="/"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+          crossorigin="anonymous"/>
 </head>
 <body>
-<h1>Better Reads</h1>
-
-<p>Welcome to the Better Reads. Login to continue...</p>
-
-<div>
-    Login: <a href="/oauth2/authorization/github">click here</a>
-</div>
+<main>
+    <div class="px-4 py-5 my-5 text-center">
+        <h1 class="display-5 fw-bold">Better Reads</h1>
+        <div class="col-lg-6 mx-auto">
+            <p class="lead mb-4">A place to track your reading habits and keeping records of books.</p>
+            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                <a href="/oauth2/authorization/github">
+                    <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Login via Github</button>
+                </a>
+            </div>
+            <p class="lead mb-4">OR</p>
+            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                <div th:insert="components/book-search :: search-panel"></div>
+            </div>
+        </div>
+    </div>
+</main>
 </body>
 </html>
